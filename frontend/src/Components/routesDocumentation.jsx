@@ -1,17 +1,11 @@
 import useSWR from 'swr';
+import ApiStatus from './apiStatus';
 
 const DocRoute = () => {
-
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const {data: api_latency, error, isLoading} = useSWR('/api/status', fetcher);
-
-    console.log(error);
-
     return (
         <div className="relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
             <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-4xl w-full">
                 <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-900">API Documentation</h1>
-
                 <section className="mb-10">
                     <h2 className="text-3xl font-semibold mb-4 text-gray-800">Route 1: Get Data from a country</h2>
                     <p><strong>Endpoint:</strong> <code className="bg-gray-200 rounded px-2 py-1">/getData/:countryCode</code></p>
@@ -98,7 +92,7 @@ const DocRoute = () => {
                     <p><strong>Endpoint:</strong> <code className="bg-gray-200 rounded px-2 py-1">/api/status</code></p>
                     <p><strong>Method:</strong> GET</p>
                     <p><strong>Description:</strong> This endpoint returns the status of the API.</p>
-                    <p><strong>Response:</strong>{api_latency.latency ? api_latency.latency + " ms" : api_latency.error}</p>
+                    <ApiStatus />
                 </section>
             </div>
         </div>

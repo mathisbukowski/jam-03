@@ -33,14 +33,14 @@ fastify.get("/getAllData", async (req, res) => {
 
 fastify.get("/status", async (req, res) => {
     const startHrTime = process.hrtime();
-    fetch(`http://localhost:${process.env.PORT}/api/getAllData`)
+    await fetch(`http://localhost:${process.env.PORT}/api/`)
         .then(() => {
             const elapsedHrTime = process.hrtime(startHrTime);
             const latency = elapsedHrTime[0] * 1000 + elapsedHrTime[1] / 1e6;
-            res.json({latency: latency});
-        }).catch(() => {
-        res.status(500).send({ error: "Cannot fetch API to get latency." });
-    });
+            res.send({latency: latency});
+        }).catch((e) => {
+            res.status(500).send({ error: "Cannot fetch API to get latency." });
+        });
 })
 
 fastify.listen({ port: process.env.PORT }, function (err, address) {
