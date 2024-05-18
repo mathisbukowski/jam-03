@@ -34,8 +34,6 @@ export default class DataObject {
         this.bright_ti5 = bright_ti5;
         this.frp = frp;
         this.daynight = daynight;
-
-        console.log(this);
     }
 
 	static equal(dataObject1, dataObject2) {

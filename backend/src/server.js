@@ -6,7 +6,6 @@ const fastify = Fastify({
     logger: true
 })
 
-
 fastify.get('/', (req, res) => {
     res.send({ status: 'Ok.' })
 });

@@ -28,11 +28,7 @@ export default class Cache {
 	}
 
 	isDataObjectAlreadySave(dataObject) {
-		for (const data of this.data) {
-			if (DataObject.equal(data, dataObject))
-				return 1;
-		}
-		return 0;
+		return this.data.find(e => e.latitude == dataObject.latitude && e.longitude == dataObject.longitude) != undefined;
 	}
 
 	saveToFile() {
