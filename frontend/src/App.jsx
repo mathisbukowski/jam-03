@@ -1,6 +1,6 @@
 import Home from "./Pages/Home.jsx";
 import About from "./Pages/About.jsx";
-import Contact from "./Pages/contact.jsx";
+import Contact from "./Pages/Contact.jsx";
 import {
     BrowserRouter,
     Routes,

@@ -16,10 +16,10 @@ function Navbar() {
                         <Link to="/about">About</Link>
                     </li>
                     <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
-                        <Link to="/about">Navigator</Link>
+                        <Link to="/navigator">Navigator</Link>
                     </li>
                     <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
-                        <Link to="/about">Documentation</Link>
+                        <Link to="/documentation">Documentation</Link>
                     </li>
                     <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
                         <Link to="/contact">Contact</Link>
