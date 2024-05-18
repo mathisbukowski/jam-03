@@ -13,7 +13,7 @@ const About = () => {
                     <div>
                         <h2 className="text-2xl font-semibold text-indigo-600 mb-2">Introduction</h2>
                         <p className="text-gray-700 leading-relaxed">
-                            Bienvenue sur Sam, votre source d'information fiable et actualisée sur les feux de forêt dans le monde. Notre mission est de fournir des informations précises et en temps réel sur les feux de forêt afin de sensibiliser le public et d'aider à la prévention et à la gestion des risques.
+                            Bienvenue sur Sam, votre source d'informations fiable et actualisée sur les feux de forêt dans le monde. Notre mission est de fournir des informations précises et en temps réel sur les feux de forêt afin de sensibiliser le public et d'aider à la prévention et à la gestion des risques.
                         </p>
                     </div>
                 </section>
