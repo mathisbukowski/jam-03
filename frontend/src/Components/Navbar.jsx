@@ -22,7 +22,7 @@ function Navbar() {
                         <Link to="/about">Documentation</Link>
                     </li>
                     <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
-                        <Link to="/about">Contact</Link>
+                        <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
             </div>
