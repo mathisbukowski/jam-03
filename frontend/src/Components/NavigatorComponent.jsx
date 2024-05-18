@@ -15,6 +15,8 @@ const NavigatorComponent = () => {
                         const points = simplify(allPoints, 0.5, 1).map(e => ({ coords: [e.x, e.y], style: { fill: 'steelblue' } }));    
                         const map = new jsVectorMap({
                             selector: "#map",
+                            showTooltip: false,
+                            zoomOnScroll: true,
                             markers: points
                         });
                         return () => {
