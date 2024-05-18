@@ -27,6 +27,7 @@ fastify.get("/getCachedData", async (req, res) => {
 
 fastify.get("/getAllData", async (req, res) => {
     const data = await api.get_all_data();
+
     res.send(data);
 })
 

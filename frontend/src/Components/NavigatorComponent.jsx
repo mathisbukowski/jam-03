@@ -1,20 +1,23 @@
 import jsVectorMap from 'jsvectormap';
 import 'jsvectormap/dist/maps/world.js';
 import { useEffect } from "react";
+import calcDistance from '../utils/calcDistance.js';
+import simplify from "simplify-js";
 
 const NavigatorComponent = () => {
     useEffect(() => {
-        fetch("/api/getData/FRA")
+        fetch("/api/getAllData")
             .then((res) => {
                 res.json()
                     .then((data) => {
-                        const points = data.map(e => ({ coords: [e.latitude, e.longitude], style: { fill: 'steelblue' } }));
+                        const allPoints = data.map(e => ({x: +e.latitude, y: +e.longitude}));
 
+                        const points = simplify(allPoints, 0.5, 1).map(e => ({ coords: [e.x, e.y], style: { fill: 'steelblue' } }));    
                         const map = new jsVectorMap({
                             selector: "#map",
-                            markers: points,
                             showTooltip: false,
-                            zoomOnScroll: true
+                            zoomOnScroll: true,
+                            markers: points
                         });
                         return () => {
                             map.destroy();
