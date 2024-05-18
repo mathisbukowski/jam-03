@@ -8,7 +8,7 @@ const About = () => {
             <div className="max-w-4xl mx-auto p-6 font-sans">
                 <h1 className="text-4xl font-bold text-center mb-8 text-neutral-950">À propos de Sam</h1>
 
-                <section className="mb-8 flex items-center bg-indigo-100 p-4 rounded-lg shadow-md">
+                <section className="mb-8 flex items-center bg-indigo-100 p-4 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
                     <img src="/assets/images/forest_fire.png" alt="Illustration de feux de forêt" className="w-32 h-32 mr-4 rounded-lg shadow-lg"/>
                     <div>
                         <h2 className="text-2xl font-semibold text-indigo-600 mb-2">Introduction</h2>
@@ -18,7 +18,7 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className="mb-8 flex items-center bg-yellow-100 p-4 rounded-lg shadow-md">
+                <section className="mb-8 flex items-center bg-yellow-100 p-4 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
                     <img src="/assets/images/fire_protection.png" alt="Illustration de prévention des incendies" className="w-32 h-32 mr-4 rounded-lg shadow-lg"/>
                     <div>
                         <h2 className="text-2xl font-semibold text-yellow-600 mb-2">Mission et Objectifs</h2>
@@ -28,7 +28,7 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className="mb-8 flex items-center bg-red-100 p-4 rounded-lg shadow-md">
+                <section className="mb-8 flex items-center bg-red-100 p-4 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
                     <img src="/assets/images/historical_context.png" alt="Illustration d'histoire et de contexte" className="w-32 h-32 mr-4 rounded-lg shadow-lg"/>
                     <div>
                         <h2 className="text-2xl font-semibold text-red-600 mb-2">Histoire et Contexte</h2>
@@ -38,7 +38,7 @@ const About = () => {
                     </div>
                 </section>
 
-                <section className="mb-8 flex items-center bg-green-100 p-4 rounded-lg shadow-md">
+                <section className="mb-8 flex items-center bg-green-100 p-4 rounded-lg shadow-md transform transition duration-500 hover:scale-105">
                     <img src="/assets/images/technology.png" alt="Illustration de technologie" className="w-32 h-32 mr-4 rounded-lg shadow-lg"/>
                     <div>
                         <h2 className="text-2xl font-semibold text-green-600 mb-2">Technologie et Méthodologie</h2>
