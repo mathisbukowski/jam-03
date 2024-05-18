@@ -2,6 +2,7 @@ import jsVectorMap from 'jsvectormap';
 import 'jsvectormap/dist/maps/world.js';
 import { useEffect } from "react";
 import calcDistance from '../utils/calcDistance.js';
+import simplify from "simplify-js";
 
 const NavigatorComponent = () => {
     useEffect(() => {
@@ -9,22 +10,9 @@ const NavigatorComponent = () => {
             .then((res) => {
                 res.json()
                     .then((data) => {
-                        const allPoints = data.map(e => ({ coords: [e.latitude, e.longitude], style: { fill: 'steelblue' } }));
+                        const allPoints = data.map(e => ({x: +e.latitude, y: +e.longitude}));
 
-                        const points = [allPoints[0]]; 
-                        let i = 0;
-                        for (const obj of allPoints) {
-                            i++;
-                            console.log(i)
-                            let add = 1;
-                            // for (const obj2 of points) {
-                            //     if (calcDistance(parseFloat(obj.latitude), parseFloat(obj.longitude), parseFloat(obj2.latitude), parseFloat(obj2.longitude)) < 20)
-                            //         add = 0;
-                            // }
-                            if (add)
-                                points.push(obj);
-                        }
-                        console.log(points.length);
+                        const points = simplify(allPoints, 0.5, 1).map(e => ({ coords: [e.x, e.y], style: { fill: 'steelblue' } }));    
                         const map = new jsVectorMap({
                             selector: "#map",
                             markers: points
