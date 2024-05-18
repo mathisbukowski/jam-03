@@ -12,7 +12,7 @@ export default {
         buttonColor: '#D48918',
         textColor: "#FFFFFF",
         lineColor: "#B46D03",
-        redirectColor: "#223240"
+        redirectColor: "#B46D03"
       }
     },
   },
