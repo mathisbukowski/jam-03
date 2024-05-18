@@ -92,7 +92,7 @@ const DocRoute = () => {
                     <p><strong>Endpoint:</strong> <code className="bg-gray-200 rounded px-2 py-1">/api/status</code></p>
                     <p><strong>Method:</strong> GET</p>
                     <p><strong>Description:</strong> This endpoint returns the status of the API.</p>
-                    <ApiStatus />
+                    <p><strong>Latency: </strong><ApiStatus /></p>
                 </section>
             </div>
         </div>
