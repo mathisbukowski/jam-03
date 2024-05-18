@@ -5,10 +5,15 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon src/server.js --ignore 'tmp/*'"
   },
   "dependencies": {
+    "csvtojson": "^2.0.10",
     "dotenv": "^16.4.5",
     "fastify": "^4.27.0"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "nodemon": "^3.1.0"
   }
 }

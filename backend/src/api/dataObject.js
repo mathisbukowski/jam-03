@@ -1,7 +1,9 @@
-import { isEqual } from "lodash";
+import pkg from 'lodash';
+const { isEqual } = pkg;
 
 export default class DataObject {
     constructor({
+        country_id,
         latitude,
         longitude,
         bright_ti4,
@@ -17,6 +19,7 @@ export default class DataObject {
         frp,
         daynight
     }) {
+        this.countryId = country_id;
         this.latitude = latitude;
         this.longitude = longitude;
         this.bright_ti4 = bright_ti4;
@@ -31,6 +34,8 @@ export default class DataObject {
         this.bright_ti5 = bright_ti5;
         this.frp = frp;
         this.daynight = daynight;
+
+        console.log(this);
     }
 
 	static equal(dataObject1, dataObject2) {
