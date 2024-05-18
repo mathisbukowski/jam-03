@@ -21,15 +21,12 @@ class Api {
 
 	make_request(url) {
 		return new Promise(async (resolve, reject) => {
-			console.log(url)
 			const res = await fetch(url)
 			if (res.ok) {
 				let result = await res.text();
-				console.log(result);
 				csv()
 				.fromString(result)
 				.then((csvRow)=>{
-					console.log(csvRow)
 					resolve(csvRow);
 				})
 			} else {
@@ -49,6 +46,21 @@ class Api {
 
 		let requestUrl = this.build_request_url("country", this.responseFormat, process.env.API_KEY, this.default_source, countryCode, this.defaultDayRange);
 		const res = await this.make_request(requestUrl)
+		this.cache.saveMultipleData(res);
+		return res;
+	}
+	
+	// /api/area/csv/af59decb78207e9ad43d06166b433fe9/VIIRS_SNPP_NRT/world/1
+	async get_all_data() {
+		let currentDate = new Date().toISOString().split('T')[0]
+		let cachedData = this.cache.data.filter(e => e.countryId == "ALL" && e.acq_date == currentDate)
+
+		if (cachedData.length != 0)
+			return cachedData;
+		let requestUrl = this.build_request_url("area", this.responseFormat, process.env.API_KEY, this.default_source, "world", this.defaultDayRange);
+		const res = await this.make_request(requestUrl)
+		res.map(e => ( e.country_id = "ALL"))
+		
 		this.cache.saveMultipleData(res);
 		return res;
 	}
