@@ -12,7 +12,9 @@ const NavigatorComponent = () => {
 
                         const map = new jsVectorMap({
                             selector: "#map",
-                            markers: points
+                            markers: points,
+                            showTooltip: false,
+                            zoomOnScroll: true
                         });
                         return () => {
                             map.destroy();
@@ -21,8 +23,10 @@ const NavigatorComponent = () => {
             });
     }, [])
     return (
-        <div className="h-400 w-400 relative">
-            <div id="map" style={{width: "100%", height: "80vh"}} className='m-5'></div>
+        <div className="mt-[50px] flex justify-center items-center h-screen">
+            <div className="relative" style={{width: '80%', height: '80vh'}}>
+                <div id="map" style={{width: "100%", height: "100%"}}></div>
+            </div>
         </div>
     );
 }
