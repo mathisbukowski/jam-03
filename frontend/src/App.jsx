@@ -7,6 +7,7 @@ import {
     Route
 } from "react-router-dom";
 import NavPage from "./Pages/NavPage.jsx";
+import Documentation from "./Pages/Documentation.jsx";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route key={"About"} element={<About />} path={"/about"} name={"About"} middleware={[]}/>
                     <Route key={"Navigator"} element={<NavPage />} path={"/navigator"} name={"Navigator"} middleware={[]}/>
                     <Route key={"Contact"} element={<Contact />} path={"/contact"} name={"Contact"} middleware={[]}/>
+                    <Route key={"Documentation"} element={<Documentation />} path={"/documentation"} name={"Documentation"} middleware={[]}/>
                 </Routes>
             </BrowserRouter>
         </>
