@@ -1,34 +1,34 @@
-import { useState } from 'react';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
-    const [nav, setNav] = useState(false);
-
-    const handleNav = () => {
-        setNav(!nav);
-    };
-
     return (
         <>
             <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-                <h1 className="w-full text-3xl font-bold text-textColor font-kode"> <Link to="/">Sam.</Link></h1>
+                <div className="flex items-center mt-2">
+                    <img src={"logo-transparent.png"}
+                         className="hidden md:block w-auto h-auto max-w-[150px] max-h-[150px]" alt={"Logo"}/>
+                    <h1 className="hidden md:block text-3xl font-bold text-textColor font-sans ml-4">
+                        <Link to="/">Sam.</Link>
+                    </h1>
+                </div>
                 <ul className="hidden md:flex">
                     <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
                         <Link to="/about">About</Link>
                     </li>
-                </ul>
-                <div onClick={handleNav} className="block md:hidden">
-                    {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-                </div>
-                <ul className={`md:hidden ${nav ? "block" : "hidden"} fixed left-0 top-0 w-[60%] h-full border-r border-r-textColor bg-bgColor ease-in-out duration-500`}>
-                    <h1 className="w-full text-3xl font-bold m-4 text-textColor font-kode"><Link to="/">Sam.</Link></h1>
-                    <li className="p-4 text-textColor font-bold border-b border-r-lineColor text-center text-xl hover:text-lineColor">
-                        <Link to="/about">About</Link>
+                    <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
+                        <Link to="/about">Navigator</Link>
+                    </li>
+                    <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
+                        <Link to="/about">Documentation</Link>
+                    </li>
+                    <li className="p-4 text-textColor font-bold text-center text-xl hover:text-lineColor">
+                        <Link to="/about">Contact</Link>
                     </li>
                 </ul>
             </div>
+
         </>
+
     );
 }
 

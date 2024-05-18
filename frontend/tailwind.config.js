@@ -11,7 +11,8 @@ export default {
         bgColor: '#F3AF48',
         buttonColor: '#D48918',
         textColor: "#FFFFFF",
-        lineColor: "#B46D03"
+        lineColor: "#B46D03",
+        redirectColor: "#B46D03"
       }
     },
   },
