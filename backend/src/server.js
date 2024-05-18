@@ -20,6 +20,17 @@ fastify.get('/getData/:countryCode', async (req, res) => {
     res.send(data);
 });
 
+fastify.get("/getCachedData", async (req, res) => {
+    const data = api.cache.data;
+
+    res.send(data);
+});
+
+fastify.get("/getAllData", async (req, res) => {
+    const data = await api.get_all_data();
+
+    res.send(data);
+})
 
 fastify.listen({ port: process.env.PORT }, function (err, address) {
     if (err) {
