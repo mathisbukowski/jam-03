@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
@@ -19,13 +18,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-end mr-10">
-                    <motion.img
-                        src={"/bg_image1.jpg"}
-                        alt={"HERO"}
-                        className={"rounded-3xl"}
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.3 }}
-                    />
+                    <img src={"/bg_image1.jpg"} alt={"HERO"} className={"rounded-3xl"}/>
                 </div>
             </div>
         </div>
