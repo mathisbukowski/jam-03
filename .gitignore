@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 .idea/
 
-backend/tmp
+backend/tmp/cache.json
